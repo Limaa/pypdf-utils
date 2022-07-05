@@ -1,0 +1,15 @@
+[project]
+name = "pypdf-utils"
+version = "0.0.0"
+description = "Utility scripts for PDF manipulation using PyPDF2"
+license = {file = "LICENSE"}
+dependencies = [
+	"PyPDF2"
+]
+
+[project.scripts]
+pypdf-join = "pypdf_utils.join:main"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
