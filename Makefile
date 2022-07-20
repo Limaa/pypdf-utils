@@ -4,7 +4,7 @@ VENV = venv
 PYTHON = $(VENV)/bin/python
 PIP = $(VENV)/bin/pip
 
-.PHONY: all venv build test clean help
+.PHONY: all venv build test deploy clean help
 all: venv
 
 $(VENV)/bin/activate: pyproject.toml
@@ -19,6 +19,10 @@ build: venv ## Build python package
 
 test: venv ## Run tests
 	$(PYTHON) -m pytest
+
+deploy: venv build ## Deploy to PyPI
+	$(PIP) install -U twine
+	$(PYTHON) -m twine upload dist/* --verbose
 
 clean: ## Clean environment (pycache, venv etc)
 	rm -rf $(VENV) dist
