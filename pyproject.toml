@@ -1,6 +1,6 @@
 [project]
 name = "pypdf-utils"
-version = "0.0.0"
+version = "0.0.1"
 description = "Utility scripts for PDF manipulation using PyPDF2"
 license = {file = "LICENSE"}
 readme = "README.md"
